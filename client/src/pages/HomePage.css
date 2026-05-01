@@ -173,6 +173,11 @@
 }
 @media (max-width: 480px) {
   .cuisine-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-stats { gap: 12px; }
-  .stat strong { font-size: 1.2rem; }
+  .hero-stats { gap: 12px; flex-wrap: wrap; }
+  .stat strong { font-size: 1.1rem; }
+  .stat span { font-size: 0.7rem; }
+  .stat-divider { display: none; }
+  .hero-headline { font-size: 1.85rem; }
+  .hero-subtext { font-size: 0.95rem; margin-bottom: 20px; }
+  .hero-section { padding: 100px 0 60px; }
 }

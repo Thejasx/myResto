@@ -269,6 +269,10 @@ h1,h2,h3,h4,h5,h6 { line-height: 1.25; font-weight: 700; }
   .container, .container-wide { padding: 0 16px; }
   .btn-lg { padding: 14px 28px; }
 }
+
+@media (max-width: 400px) {
+  .container, .container-wide { padding: 0 12px; }
+}
 @media (max-width: 480px) {
   .section { padding: 40px 0; }
 }

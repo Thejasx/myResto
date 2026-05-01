@@ -13,7 +13,7 @@
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
 .header-inner {
-  display: flex; align-items: center; gap: 24px;
+  display: flex; align-items: center; justify-content: space-between;
   height: 68px;
 }
 /* Logo */
@@ -115,4 +115,14 @@
 @media (max-width: 600px) {
   .user-name { display: none; }
   .auth-btns .btn:first-child { display: none; }
+  .header-inner { padding: 0 12px; }
+  .header-logo { font-size: 1.15rem; gap: 6px; }
+  .logo-icon { font-size: 1.25rem; }
+  .header-actions { gap: 8px; }
+}
+
+@media (max-width: 400px) {
+  .header-logo .logo-text span:last-child { display: none; } /* Hide 'Resto' if really tight */
+  .logo-text { font-size: 1.1rem; }
+  .header-actions { gap: 5px; }
 }

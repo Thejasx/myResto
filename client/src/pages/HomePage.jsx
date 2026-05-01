@@ -76,9 +76,7 @@ export default function HomePage() {
           <div className="hero-text page-enter">
             <div className="hero-eyebrow">🌟 India's #1 Restaurant Booking Platform</div>
             <h1 className="hero-headline font-display">
-              Discover &amp; Book the<br />
-              <span className="gradient-text">Perfect Dining</span><br />
-              Experience
+              Discover & Book the <span className="gradient-text">Perfect Dining</span> Experience
             </h1>
             <p className="hero-subtext">
               From cozy cafes to luxury rooftops — explore thousands of restaurants,
