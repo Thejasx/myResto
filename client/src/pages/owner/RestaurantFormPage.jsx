@@ -10,6 +10,7 @@ import {
 } from '../../services/api';
 import toast from 'react-hot-toast';
 import { FiSave, FiPlus, FiTrash2, FiInfo, FiLayers, FiImage, FiClock } from 'react-icons/fi';
+import './OwnerDashboard.css';
 
 const categories = ['Main Course', 'Starters', 'Desserts', 'Beverages', 'Breads', 'Rice', 'Breakfast', 'Snacks'];
 const cuisines = ['North Indian', 'South Indian', 'Chinese', 'Italian', 'Mughlai', 'Continental', 'Seafood', 'Street Food'];
@@ -136,7 +137,7 @@ export default function RestaurantFormPage() {
     <div className="owner-page" style={{ paddingTop: 100 }}>
       <div className="container" style={{ maxWidth: 900 }}>
         <div className="section-header" style={{ textAlign: 'left', marginBottom: 32 }}>
-          <h1>{isEdit ? 'Edit Restaurant' : 'Add Your Restaurant'}</h1>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)' }}>{isEdit ? 'Edit Restaurant' : 'Add Your Restaurant'}</h1>
           <p>Provide details about your restaurant and manage your menu</p>
         </div>
 
@@ -146,7 +147,7 @@ export default function RestaurantFormPage() {
         </div>
 
         {activeStep === 1 ? (
-          <div className="card" style={{ padding: 32 }}>
+          <div className="card" style={{ padding: 'clamp(16px, 4vw, 32px)' }}>
             <form onSubmit={handleSaveRestaurant} className="auth-form">
               <div className="grid-2">
                 <div className="form-group">
@@ -221,11 +222,11 @@ export default function RestaurantFormPage() {
                 <input className="form-input" name="images" value={restaurant.images[0]} onChange={(e) => setRestaurant(p => ({...p, images: [e.target.value]}))} placeholder="Paste a high-quality image URL" />
               </div>
 
-              <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
-                <button type="submit" className="btn btn-primary btn-lg" disabled={loading}>
+              <div className="flex gap-4" style={{ marginTop: 12, flexWrap: 'wrap' }}>
+                <button type="submit" className="btn btn-primary btn-lg" style={{ flex: 1, minWidth: 200 }} disabled={loading}>
                   <FiSave /> {isEdit ? 'Update Restaurant' : 'Next: Manage Menu'}
                 </button>
-                <button type="button" className="btn btn-outline btn-lg" onClick={() => navigate('/owner/dashboard')}>Cancel</button>
+                <button type="button" className="btn btn-outline btn-lg" style={{ flex: 1, minWidth: 200 }} onClick={() => navigate('/owner/dashboard')}>Cancel</button>
               </div>
             </form>
           </div>
@@ -247,11 +248,11 @@ export default function RestaurantFormPage() {
             ) : (
               <div className="grid-2">
                 {menu.map(item => (
-                  <div key={item._id} className="card flex" style={{ padding: 16, gap: 16 }}>
-                    <div style={{ width: 80, height: 80, borderRadius: 8, overflow: 'hidden', background: '#f1f5f9', flexShrink: 0 }}>
+                  <div key={item._id} className="card menu-item-card">
+                    <div className="menu-item-img">
                       {item.image ? <img src={item.image} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div className="flex-center" style={{ height: '100%' }}>🍲</div>}
                     </div>
-                    <div style={{ flex: 1 }}>
+                    <div className="menu-item-info">
                       <div className="flex-between">
                         <h4 style={{ fontSize: '1rem' }}>{item.name}</h4>
                         <span className="price-tag">₹{item.priceInr}</span>
