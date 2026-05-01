@@ -34,7 +34,8 @@ export default function AdminLoginPage() {
       <div className="auth-container">
         <div className="auth-card page-enter">
           <div className="auth-header">
-            <div style={{ fontSize: '3rem', marginBottom: 16 }}>🛡️</div>
+            <Link to="/" className="auth-logo">🍽️ My<span>Resto</span></Link>
+            <div style={{ fontSize: '2.5rem', marginBottom: 12 }}>🛡️</div>
             <h1>Admin Control</h1>
             <p>Enter administrative credentials</p>
           </div>
@@ -44,7 +45,7 @@ export default function AdminLoginPage() {
               <div className="input-icon-wrap">
                 <FiMail className="input-icon" />
                 <input className="form-input" type="email" placeholder="admin@gmail.com"
-                  value={form.email} onChange={e => setForm({...form, email: e.target.value})} required style={{ paddingLeft: 40 }} />
+                  value={form.email} onChange={e => setForm({...form, email: e.target.value})} required />
               </div>
             </div>
             <div className="form-group">
@@ -52,7 +53,7 @@ export default function AdminLoginPage() {
               <div className="input-icon-wrap">
                 <FiLock className="input-icon" />
                 <input className="form-input" type={showPass ? 'text' : 'password'} placeholder="••••••••"
-                  value={form.password} onChange={e => setForm({...form, password: e.target.value})} required style={{ paddingLeft: 40 }} />
+                  value={form.password} onChange={e => setForm({...form, password: e.target.value})} required />
                 <button type="button" className="pass-toggle" onClick={() => setShowPass(!showPass)}>
                   {showPass ? <FiEyeOff /> : <FiEye />}
                 </button>

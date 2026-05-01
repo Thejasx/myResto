@@ -1,17 +1,21 @@
 .auth-page {
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  position: relative; padding: 40px 20px;
+  position: relative; padding: 20px;
 }
 .auth-bg { position: fixed; inset: 0; z-index: 0; }
 .auth-gradient {
   position: absolute; inset: 0;
   background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 30%, #e0f2fe 70%, #f0fdf4 100%);
 }
-.auth-container { position: relative; z-index: 1; width: 100%; max-width: 500px; }
+.auth-container { 
+  position: relative; z-index: 1; width: 100%; max-width: 480px; 
+  margin: auto;
+}
 .auth-card {
   background: var(--bg-glass); backdrop-filter: var(--blur);
   border: 1px solid var(--border); border-radius: var(--radius-xl);
   padding: 40px; box-shadow: var(--shadow-xl);
+  width: 100%;
 }
 .auth-header { text-align: center; margin-bottom: 32px; }
 .auth-logo {
@@ -44,9 +48,10 @@
 .auth-demo-creds p { font-size: 0.82rem; color: var(--primary-dark); font-weight: 600; margin-bottom: 10px; }
 .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .demo-btn {
-  padding: 8px; border-radius: var(--radius); border: 1.5px solid rgba(13,148,136,0.25);
+  padding: 10px 8px; border-radius: var(--radius); border: 1.5px solid rgba(13,148,136,0.25);
   background: #fff; font-size: 0.8rem; font-weight: 600; cursor: pointer;
   color: var(--text-primary); transition: var(--transition);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
 }
 .demo-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
 
@@ -54,7 +59,17 @@
 .auth-switch a { color: var(--primary); font-weight: 600; }
 .auth-switch a:hover { text-decoration: underline; }
 
-@media (max-width: 480px) {
-  .auth-card { padding: 28px 20px; }
+@media (max-width: 500px) {
+  .auth-page { padding: 16px; }
+  .auth-card { padding: 32px 20px; border-radius: var(--radius-lg); }
+  .auth-header h1 { font-size: 1.5rem; }
+  .demo-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 360px) {
+  .auth-card { padding: 24px 16px; }
+  .auth-header { margin-bottom: 24px; }
+  .auth-header h1 { font-size: 1.35rem; }
+}
+

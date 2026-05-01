@@ -45,7 +45,7 @@ export default function OwnerLoginPage() {
               <div className="input-icon-wrap">
                 <FiMail className="input-icon" />
                 <input className="form-input" type="email" placeholder="owner@example.com"
-                  value={form.email} onChange={e => set('email', e.target.value)} required style={{ paddingLeft: 40 }} />
+                  value={form.email} onChange={e => set('email', e.target.value)} required />
               </div>
             </div>
             <div className="form-group">
@@ -53,7 +53,7 @@ export default function OwnerLoginPage() {
               <div className="input-icon-wrap">
                 <FiLock className="input-icon" />
                 <input className="form-input" type={showPass ? 'text' : 'password'} placeholder="••••••••"
-                  value={form.password} onChange={e => set('password', e.target.value)} required style={{ paddingLeft: 40 }} />
+                  value={form.password} onChange={e => set('password', e.target.value)} required />
                 <button type="button" className="pass-toggle" onClick={() => setShowPass(!showPass)}>
                   {showPass ? <FiEyeOff /> : <FiEye />}
                 </button>

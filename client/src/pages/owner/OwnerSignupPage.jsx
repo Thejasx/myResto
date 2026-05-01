@@ -46,7 +46,7 @@ export default function OwnerSignupPage() {
               <div className="input-icon-wrap">
                 <FiUser className="input-icon" />
                 <input className="form-input" type="text" placeholder="Restaurant owner name"
-                  value={form.name} onChange={e => set('name', e.target.value)} required style={{ paddingLeft: 40 }} />
+                  value={form.name} onChange={e => set('name', e.target.value)} required />
               </div>
             </div>
             <div className="form-group">
@@ -54,7 +54,7 @@ export default function OwnerSignupPage() {
               <div className="input-icon-wrap">
                 <FiMail className="input-icon" />
                 <input className="form-input" type="email" placeholder="owner@example.com"
-                  value={form.email} onChange={e => set('email', e.target.value)} required style={{ paddingLeft: 40 }} />
+                  value={form.email} onChange={e => set('email', e.target.value)} required />
               </div>
             </div>
             <div className="form-group">
@@ -62,7 +62,7 @@ export default function OwnerSignupPage() {
               <div className="input-icon-wrap">
                 <FiPhone className="input-icon" />
                 <input className="form-input" type="tel" placeholder="+91 98765 43210"
-                  value={form.phone} onChange={e => set('phone', e.target.value)} required style={{ paddingLeft: 40 }} />
+                  value={form.phone} onChange={e => set('phone', e.target.value)} required />
               </div>
             </div>
             <div className="form-group">
@@ -70,7 +70,7 @@ export default function OwnerSignupPage() {
               <div className="input-icon-wrap">
                 <FiLock className="input-icon" />
                 <input className="form-input" type={showPass ? 'text' : 'password'} placeholder="Min 6 characters"
-                  value={form.password} onChange={e => set('password', e.target.value)} required style={{ paddingLeft: 40 }} />
+                  value={form.password} onChange={e => set('password', e.target.value)} required />
                 <button type="button" className="pass-toggle" onClick={() => setShowPass(!showPass)}>
                   {showPass ? <FiEyeOff /> : <FiEye />}
                 </button>
