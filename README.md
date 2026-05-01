@@ -68,5 +68,6 @@ npm run dev      # Start frontend on port 5173
 - **Customer**: `customer@demo.com` / `password123`
 - **Owner**: `owner1@myrestodemo.com` / `password123` (up to owner12)
 
-## 🌐 Deployment
-The project includes `vercel.json` configurations for both frontend and backend. Ensure to update `CLIENT_URL` in backend `.env` and `VITE_API_BASE_URL` in frontend `.env` when deploying.
+## deployments
+
+access at : https://my-resto-n3f9.vercel.app/
