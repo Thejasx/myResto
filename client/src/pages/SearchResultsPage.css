@@ -1,0 +1,42 @@
+.search-results-page { padding-top: 68px; min-height: 100vh; }
+.search-strip { background: #0f172a; padding: 20px 0; }
+.results-layout { display: grid; grid-template-columns: 260px 1fr; gap: 28px; padding: 28px 24px; align-items: start; }
+
+/* Sidebar */
+.filters-sidebar {
+  background: var(--bg-card); border-radius: var(--radius-lg); padding: 20px;
+  box-shadow: var(--shadow); border: 1px solid var(--border-light); position: sticky; top: 90px;
+}
+.filters-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.filters-header h3 { font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.filter-count {
+  background: var(--primary); color: #fff; border-radius: var(--radius-full);
+  width: 18px; height: 18px; font-size: 0.7rem; display: inline-flex;
+  align-items: center; justify-content: center; font-weight: 700;
+}
+.filter-group { margin-bottom: 20px; border-bottom: 1px solid var(--border-light); padding-bottom: 18px; }
+.filter-group:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.filter-group h4 { font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.filter-check, .filter-radio {
+  display: flex; align-items: center; gap: 10px; font-size: 0.88rem; cursor: pointer;
+  padding: 6px 0; color: var(--text-primary); transition: var(--transition);
+}
+.filter-check:hover, .filter-radio:hover { color: var(--primary); }
+.filter-check input, .filter-radio input { accent-color: var(--primary); width: 15px; height: 15px; }
+
+/* Results */
+.results-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.results-title { font-size: 1.5rem; margin-bottom: 4px; }
+.results-sub { color: var(--text-muted); font-size: 0.88rem; }
+.filter-toggle-btn { display: none; }
+
+@media (max-width: 900px) {
+  .results-layout { grid-template-columns: 1fr; }
+  .filters-sidebar {
+    position: fixed; top: 0; bottom: 0; left: -100%; width: 280px; z-index: 800;
+    border-radius: 0; overflow-y: auto; transition: left 0.3s ease;
+    box-shadow: var(--shadow-xl);
+  }
+  .filters-sidebar.filters-open { left: 0; }
+  .filter-toggle-btn { display: flex; }
+}
