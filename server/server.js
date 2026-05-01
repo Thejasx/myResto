@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 if (process.env.NODE_ENV !== 'production') app.use(morgan('dev'));
 
 // Health check
+app.get('/', (req, res) => res.json({ message: 'Welcome to My Resto API! 🚀 Use /api for endpoints.' }));
 app.get('/api/health', (req, res) => res.json({ status: 'ok', message: 'My Resto API is running 🚀' }));
 
 // Routes
