@@ -1,6 +1,6 @@
 .site-footer {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-  color: rgba(255,255,255,0.8); padding: 72px 0 0; position: relative; overflow: hidden;
+  color: rgba(255,255,255,0.8); padding: 120px 0 0; position: relative; overflow: hidden;
 }
 .site-footer::before {
   content: ''; position: absolute; top: -80px; left: -10%; right: -10%;
